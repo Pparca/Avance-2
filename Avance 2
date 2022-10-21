@@ -111,7 +111,7 @@ setlocale(LC_CTYPE, "Spanish");
 					if (busqueda == arting[i].numarticulo)
 					{
 						printf("numero de articulo: %d \n", arting[i].numarticulo);
-						printf("numero de orden de compra: %d \n", arting[i].numarticulo);
+						printf("numero de orden de compra: %d \n", arting[i].orden_compra);
 						//proveedor
 						printf("proveedor %s\n", arting[i].proveedor.c_str());
 						printf("subtotal: %f \n", arting[i].subtotal);
