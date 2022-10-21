@@ -3,6 +3,7 @@
 #include <string.h>
 #include <string>
 #include <stdio.h>
+#include <clocale>
 
 using namespace std;
 
@@ -18,6 +19,8 @@ struct Datos /*<------------ESTRUCTURA DONDE SE ALMACENA LA INFORMACI�N DE LOS
 
 int main()    /*ARREGLO. El [3] indica el numero de lugares*/ 
 {
+setlocale(LC_CTYPE, "Spanish");
+
 	Datos arting[3];
 	//Declaración de variables
 	int opcion /*<----Menu (switch)*/, busqueda;
