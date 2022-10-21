@@ -73,7 +73,7 @@ setlocale(LC_CTYPE, "Spanish");
 				cin.ignore();
 				getline(cin, arting[i].descripcion);
 
-				printf("Género del videjuego");
+				printf("Género del videojuego");
 				cin.ignore();
 				getline(cin, arting[i].genero);
 
@@ -110,9 +110,14 @@ setlocale(LC_CTYPE, "Spanish");
 				{
 					if (busqueda == arting[i].numarticulo)
 					{
-						printf("numero de articulo: %d \n", arting[i].numarticulo);
-						printf("numero de orden de compra: %d \n", arting[i].orden_compra);
-						//proveedor
+						printf("Nombre del videojuego: %s\n", arting[i].nom_vid.c_str());
+						printf("Año de lanzamiento: %d\n", arting[i].año);
+						printf("Clasificación: %s\n", arting[i].clasificacion.c_str());
+						printf("Caracteristicas: %s\n", arting[i].caracteristicas.c_str());
+						printf("Descripcion: %s\n", arting[i].descripcion.c_str());
+						printf("Genero: %s\n", arting[i].genero.c_str());
+						printf("Consola compatible: %s\n", arting[i].consola.c_str());
+						printf("Numero de orden de compra: %d\n", arting[i].orden_compra);
 						printf("proveedor %s\n", arting[i].proveedor.c_str());
 						printf("subtotal: %f \n", arting[i].subtotal);
 						printf("iva: %f \n", arting[i].iva);
@@ -126,10 +131,15 @@ setlocale(LC_CTYPE, "Spanish");
 				{
 					if (arting[i].numarticulo != 0)
 					{
-						printf("numero de articulo: %d \n", arting[i].numarticulo);
-						printf("numero de orden de compra: %d \n", arting[i].numarticulo);
-						//proveedor
-						printf("proveedor %s", arting[i].proveedor.c_str());
+						printf("Nombre del videojuego: %s\n", arting[i].nom_vid.c_str());
+						printf("Año de lanzamiento: %d\n", arting[i].año);
+						printf("Clasificación: %s\n", arting[i].clasificacion.c_str());
+						printf("Caracteristicas: %s\n", arting[i].caracteristicas.c_str());
+						printf("Descripcion: %s\n", arting[i].descripcion.c_str());
+						printf("Genero: %s\n", arting[i].genero.c_str());
+						printf("Consola compatible: %s\n", arting[i].consola.c_str());
+						printf("Numero de orden de compra: %d\n", arting[i].orden_compra);
+						printf("proveedor %s\n", arting[i].proveedor.c_str());
 						printf("subtotal: %f \n", arting[i].subtotal);
 						printf("iva: %f \n", arting[i].iva);
 						printf("total: %f \n", arting[i].total);
