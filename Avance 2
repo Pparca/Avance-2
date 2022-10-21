@@ -102,7 +102,7 @@ setlocale(LC_CTYPE, "Spanish");
 			scanf_s("%d", &opc2);
 			if (opc2 == 1)
 			{
-				printf("ingrese el numero de orden de compra");
+				printf("ingrese el numero del articulo");
 				scanf_s("%d", &busqueda);
 
 				//imprimir los datos por posicion 
@@ -113,7 +113,7 @@ setlocale(LC_CTYPE, "Spanish");
 						printf("numero de articulo: %d \n", arting[i].numarticulo);
 						printf("numero de orden de compra: %d \n", arting[i].numarticulo);
 						//proveedor
-						printf("proveedor %s", arting[i].proveedor.c_str());
+						printf("proveedor %s\n", arting[i].proveedor.c_str());
 						printf("subtotal: %f \n", arting[i].subtotal);
 						printf("iva: %f \n", arting[i].iva);
 						printf("total: %f \n", arting[i].total);
