@@ -1,0 +1,176 @@
+#include <iostream>
+#include <conio.h>
+#include <string.h>
+#include <string>
+#include <stdio.h>
+
+using namespace std;
+
+struct Datos /*<------------ESTRUCTURA DONDE SE ALMACENA LA INFORMACI�N DE LOS REGISTROS, se declara antes del int main*/
+{
+	//declaracion de variables dentro de la estructura
+
+	int numarticulo, año, orden_compra;
+	string proveedor, nom_vid, clasificacion,caracteristicas,descripcion,consola,genero;
+	float subtotal, iva, total;
+};
+
+
+int main()    /*ARREGLO. El [3] indica el numero de lugares*/ 
+{
+	Datos arting[3];
+	//Declaración de variables
+	int opcion /*<----Menu (switch)*/, busqueda;
+
+	do
+	{
+		printf("\t ***MENU DE OPCIONES*** \n");
+		printf(" 1.-Agregar articulo \n 2.-Lista \n 3.-Eliminar \n 4.-Limpiar \n 5.-Salir \n");
+		scanf_s("%d", &opcion);
+
+		switch (opcion)
+		{
+		case 1://***************************************ALTA DEL ART�CULO********************************************
+			//capturar y guardar los datos por posicion
+			for (int i = 0; i < 3; i++)
+			{
+				arting[i].orden_compra = 20220000 + i;
+				printf("Orden de compra: %d \n", arting[i].orden_compra);
+				int salida = 1;
+				
+				do
+				{
+					printf("ingrese el numero de articulo \n");
+					scanf_s("%d", &arting[i].numarticulo);
+					if (arting[i].numarticulo == arting[i - 1].numarticulo || arting[i].numarticulo == arting[i - 2].numarticulo)
+					{
+						printf("El numero de articulo ya existe, ingrese otro distinto \n");
+					}
+					
+				} 
+				while (arting[i].numarticulo == arting[i-1].numarticulo || arting[i].numarticulo == arting[i - 2].numarticulo);
+				
+				printf("Ingrese el nombre del videojuego\n");
+				cin.ignore();
+				getline(cin, arting[i].nom_vid);
+
+				cout << "Ingrese el año de lanzamiento" << endl;
+				scanf_s("%d", &arting[i].año);
+				
+
+				printf("Clasificación del videojuego\n");
+				cin.ignore();
+				getline(cin, arting[i].clasificacion);
+
+				printf("Características del juego\n");
+				cin.ignore();
+				getline(cin, arting[i].caracteristicas);
+
+				printf("Añada una breve descripción");
+				cin.ignore();
+				getline(cin, arting[i].descripcion);
+
+				printf("Género del videjuego");
+				cin.ignore();
+				getline(cin, arting[i].genero);
+
+				printf("Consolas compatibles");
+				cin.ignore();
+				getline(cin, arting[i].consola);
+
+				printf("ingrese el nombre del proveedor \n");
+				cin.ignore();
+				getline(cin, arting[i].proveedor);
+
+				printf("ingrese el subtotal \n");
+				scanf_s("%f", &arting[i].subtotal);
+		
+				arting[i].iva = arting[i].subtotal * .16;
+				arting[i].total = arting[i].subtotal + arting[i].iva;
+				//compras[i].total =compras[i].subtotal*1.16;
+				system("pause");
+				system("cls");
+			}
+			break;
+
+		case 2: //************************************************* lISTA DE BÚSQUEDA****************************************
+			int opc2;//Variable para búsqueda del artículo por su número o desplegar la lista
+			printf("1.- Numero de articulo \n 2.-Listas Vigentes");
+			scanf_s("%d", &opc2);
+			if (opc2 == 1)
+			{
+				printf("ingrese el numero de orden de compra");
+				scanf_s("%d", &busqueda);
+
+				//imprimir los datos por posicion 
+				for (int i = 0; i < 3; i++)
+				{
+					if (busqueda == arting[i].numarticulo)
+					{
+						printf("numero de articulo: %d \n", arting[i].numarticulo);
+						printf("numero de orden de compra: %d \n", arting[i].numarticulo);
+						//proveedor
+						printf("proveedor %s", arting[i].proveedor.c_str());
+						printf("subtotal: %f \n", arting[i].subtotal);
+						printf("iva: %f \n", arting[i].iva);
+						printf("total: %f \n", arting[i].total);
+					}
+				}
+			}
+			else
+			{
+				for (int i = 0; i < 3; i++)
+				{
+					if (arting[i].numarticulo != 0)
+					{
+						printf("numero de articulo: %d \n", arting[i].numarticulo);
+						printf("numero de orden de compra: %d \n", arting[i].numarticulo);
+						//proveedor
+						printf("proveedor %s", arting[i].proveedor.c_str());
+						printf("subtotal: %f \n", arting[i].subtotal);
+						printf("iva: %f \n", arting[i].iva);
+						printf("total: %f \n", arting[i].total);
+					}
+				}
+			}
+			break;
+			//A�o del art�culo
+				/*int main();
+				{
+					int i;
+					printf("Ingrese el a�o del art�culo\n");
+					for (int i = 0; i <= 255; i++)
+					{
+						printf("%d-%c \t", i, i);
+					}
+
+					printf("\n ingrese el a%co", 164);
+				}*/
+
+		case 3://************************************** ELIMINAR (no har� nada)**********************************
+			printf("ingrese el numero de orden de compra");
+			scanf_s("%d", &busqueda);
+
+			//imprimir los datos por posicion 
+			for (int i = 0; i < 3; i++)
+			{
+				if (busqueda == arting[i].numarticulo)
+				{
+					arting[i].numarticulo = 0;
+				}
+			}
+			break;
+
+		case 4://*******************************LIMPIAR PANTALLA*************************************************
+			system("cls");
+			break;
+		case 5://*********************************SALIR**********************************************************
+			printf("saliendo... \n");
+			break;
+		default:
+			printf("intente denuevo... \n");
+			break;
+		}
+	} while (opcion != 5);
+	system("pause");
+}
