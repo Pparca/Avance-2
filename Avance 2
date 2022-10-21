@@ -98,11 +98,11 @@ setlocale(LC_CTYPE, "Spanish");
 
 		case 2: //************************************************* lISTA DE BÚSQUEDA****************************************
 			int opc2;//Variable para búsqueda del artículo por su número o desplegar la lista
-			printf("1.- Numero de articulo \n 2.-Listas Vigentes");
+			printf("1.- Numero de articulo \n 2.-Listas Vigentes\n");
 			scanf_s("%d", &opc2);
 			if (opc2 == 1)
 			{
-				printf("ingrese el numero del articulo");
+				printf("ingrese el numero del articulo\n");
 				scanf_s("%d", &busqueda);
 
 				//imprimir los datos por posicion 
@@ -137,19 +137,7 @@ setlocale(LC_CTYPE, "Spanish");
 				}
 			}
 			break;
-			//A�o del art�culo
-				/*int main();
-				{
-					int i;
-					printf("Ingrese el a�o del art�culo\n");
-					for (int i = 0; i <= 255; i++)
-					{
-						printf("%d-%c \t", i, i);
-					}
-
-					printf("\n ingrese el a%co", 164);
-				}*/
-
+			
 		case 3://************************************** ELIMINAR (no har� nada)**********************************
 			printf("ingrese el numero de orden de compra");
 			scanf_s("%d", &busqueda);
